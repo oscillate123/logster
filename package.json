@@ -1,0 +1,20 @@
+{
+  "name": "logster",
+  "version": "1.0.0",
+  "description": "Logging Microservice with MySQL Database",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-oscillate123:oscillate123/logster.git"
+  },
+  "author": "oscillat123@github.com",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

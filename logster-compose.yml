@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  logster-app:
+    build: .
+    env_file: .env/.app.env
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    links:
+      - "logster-database:logster-database"
+    volumes:
+      - "./src/:/src/"
+
+  logster-database:
+    image: mysql:8.0
+    restart: unless-stopped
+    env_file: .env/.db.env
+    ports:
+      - '3306:33306'
+    expose:
+      - '33306'
+    volumes:
+      - logdump:/var/lib/mysql
+
+volumes:
+  logdump:
