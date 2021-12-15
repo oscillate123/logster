@@ -1,12 +1,27 @@
 # logster
 
+- [logster](#logster)
+    + [Setup dev environment for logster](#setup-dev-environment-for-logster)
+      - [Dependencies](#dependencies)
+      - [Clone the repository](#clone-the-repository)
+      - [Node install](#node-install)
+      - [Docker Compose](#docker-compose)
+      - [Verify](#verify)
+      - [Visual Studio Code Extensions](#visual-studio-code-extensions)
+    + [Other Tools / Misc](#other-tools---misc)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 
 ### Setup dev environment for logster
+
 
 #### Dependencies
 * Docker
 * Docker Compose
 * node.js
+
 
 
 #### Clone the repository
@@ -16,11 +31,13 @@ e.g. git clone git@github.com:oscillate123/logster.git
 ```
 
 
+
 #### Node install
 ```
 npm install
 ```
 If you want to run the node server from your environment you can install the node modules etc. But the point of Docker here is so you only need to run the node server inside of the docker container.
+
 
 
 #### Docker Compose
@@ -40,6 +57,8 @@ logster-app_1       | Running app on 3000
 * logster-app_1 is the web application (node.js container)
 * logster-database_1 is the database application (mysql container)
 
+
+
 #### Verify
 Windows PowerShell
 ```
@@ -50,6 +69,8 @@ Bash
 curl http://localhost:3000
 ```
 Or open http://localhost:3000 in a browser
+
+
 
 #### Visual Studio Code Extensions
 Export list of installed extensions
@@ -74,3 +95,8 @@ code --install-extension ms-vscode.powershell
 code --install-extension PKief.material-icon-theme
 ```
 I will most likely add ESLint for JavaScript linting, but haven't implemented that, yet.
+
+
+
+### Other Tools / Misc
+- https://ecotrust-canada.github.io/markdown-toc/
