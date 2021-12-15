@@ -1,29 +1,29 @@
 # logster
 
 
-## Setup dev environment for logster
+### Setup dev environment for logster
 
-### Dependencies
+#### Dependencies
 * Docker
 * Docker Compose
 * node.js
 
 
-### Clone the repository
+#### Clone the repository
 ```
 git clone <url or ssh>
 e.g. git clone git@github.com:oscillate123/logster.git
 ```
 
 
-### Node install
+#### Node install
 ```
 npm install
 ```
 If you want to run the node server from your environment you can install the node modules etc. But the point of Docker here is so you only need to run the node server inside of the docker container.
 
 
-### Docker Compose
+#### Docker Compose
 ```
 docker-compose --file logster-compose.yml up --build
 ```
@@ -40,7 +40,7 @@ logster-app_1       | Running app on 3000
 * logster-app_1 is the web application (node.js container)
 * logster-database_1 is the database application (mysql container)
 
-### Verify
+#### Verify
 Windows PowerShell
 ```
 curl http://localhost:3000 -UseBasicParsing
@@ -50,3 +50,27 @@ Bash
 curl http://localhost:3000
 ```
 Or open http://localhost:3000 in a browser
+
+#### Visual Studio Code Extensions
+Export list of installed extensions
+```
+# Windows
+code --list-extensions | % { "code --install-extension $_" }
+# Unix
+code --list-extensions | xargs -L 1 echo code --install-extension
+```
+Generated list from my VS Code
+```
+code --install-extension christian-kohler.npm-intellisense
+code --install-extension christian-kohler.path-intellisense
+code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension eg2.vscode-npm-script
+code --install-extension mikestead.dotenv
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode.powershell
+code --install-extension PKief.material-icon-theme
+```
+I will most likely add ESLint for JavaScript linting, but haven't implemented that, yet.
