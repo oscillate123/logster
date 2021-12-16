@@ -35,6 +35,18 @@ npm install
 
 If you want to run the node server from your environment you can install the node modules etc. But the point of Docker here is so you only need to run the node server inside of the docker container.
 
+### create your .env files
+
+Env files are environment configurations in file format. They are used by Docker-Compose for setting environment variables in the containers on start-up.
+In order to use logster-compose.yml, you need to create:
+
+- logster/.env/.app.env
+  - this file is used for storing environment variables for the application containers
+
+- logster/.env/.db.env
+  - this file is used for storing environment variables for the database containers
+  - Link to why you need environment variables: [Mysql Docker Hub](https://hub.docker.com/_/mysql#Environment-Variables)
+
 ### Docker Compose
 
 ```PowerShell
