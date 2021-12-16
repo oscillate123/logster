@@ -99,8 +99,6 @@ code --install-extension ms-vscode.powershell # powershell support
 code --install-extension PKief.material-icon-theme # icon theme styling
 ```
 
-I will most likely add ESLint for JavaScript linting, but haven't implemented that, yet.
-
 ## Other Tools / Misc
 
 - `https://ecotrust-canada.github.io/markdown-toc/`
