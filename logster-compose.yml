@@ -2,7 +2,9 @@ version: '3'
 
 services:
   logster-app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     env_file: .env/.app.env
     ports:
       - "3000:3000"
@@ -11,7 +13,8 @@ services:
     links:
       - "logster-database:logster-database"
     volumes:
-      - "./src/:/src/"
+      - ./src:/app/src
+    command: npm run docker-dev
 
   logster-database:
     image: mysql:8.0

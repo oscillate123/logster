@@ -2,14 +2,16 @@
   "name": "logster",
   "version": "1.0.0",
   "description": "Logging Microservice with MySQL Database",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main",
+    "docker-dev": "nodemon -L main"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com-oscillate123:oscillate123/logster.git"
+    "url": "git@github.com:oscillate123/logster.git"
   },
   "author": "oscillat123@github.com",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0"
+    "eslint-plugin-promise": "^5.2.0",
+    "nodemon": "^2.0.15"
   }
 }
