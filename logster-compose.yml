@@ -21,9 +21,9 @@ services:
     restart: unless-stopped
     env_file: .env/.db.env
     ports:
-      - '3306:33306'
+      - 3306:3306
     expose:
-      - '33306'
+      - 3306
     volumes:
       - logdump:/var/lib/mysql
 
