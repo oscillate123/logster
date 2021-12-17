@@ -42,10 +42,27 @@ In order to use logster-compose.yml, you need to create:
 
 - logster/.env/.app.env
   - this file is used for storing environment variables for the application containers
+  - environment variables should be treated as secrets. *dont* `git add .env` files!
+  - i.e.
+
+```bash
+DB_HOST=database
+DB_USER=loggy
+DB_PASSWORD=TestPass1234
+DB_NAME=logster-db  
+```
 
 - logster/.env/.db.env
   - this file is used for storing environment variables for the database containers
   - Link to why you need environment variables: [Mysql Docker Hub](https://hub.docker.com/_/mysql#Environment-Variables)
+  - i.e.
+
+```bash
+MYSQL_ROOT_PASSWORD=TestRoot1234
+MYSQL_DATABASE=logster-db
+MYSQL_USER=loggy
+MYSQL_PASSWORD=TestPass1234
+```
 
 ### Docker Compose
 

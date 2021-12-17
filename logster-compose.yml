@@ -11,7 +11,7 @@ services:
     expose:
       - "3000"
     links:
-      - "logster-database:logster-database"
+      - database:logster-database
     volumes:
       - ./src:/app/src
     command: npm run docker-dev
