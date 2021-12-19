@@ -1,10 +1,13 @@
-import express from 'express'
+const express = require('express');
+const db = require("./db/models");
 
 const app = express()
 const port = 3000
 
+db.sequelize.sync();
+
 app.get('/', function (req, res) {
-    
+
     const request_information = {
         "ip": req.ip,
         "hostname": req.hostname,

@@ -2,16 +2,20 @@ version: '3'
 
 services:
   logster-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file: .env/.app.env
+    # use build if you've made other changes than to /src
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # use image if you've don't made changes to other than /src
+    # this is for faster re-deployment if you change i.e. db models/etc
+    image: logster_logster-app:latest
     ports:
       - "3000:3000"
     expose:
       - "3000"
+    env_file: .env/.db.env # shared with mysql container for easier development
     links:
-      - database:logster-database
+      - logster-database:logster-database
     volumes:
       - ./src:/app/src
     command: npm run docker-dev
@@ -19,13 +23,8 @@ services:
   logster-database:
     image: mysql:8.0
     restart: unless-stopped
-    env_file: .env/.db.env
+    env_file: .env/.db.env # shared with nodejs container for easier development
     ports:
       - 3306:3306
     expose:
       - 3306
-    volumes:
-      - logdump:/var/lib/mysql
-
-volumes:
-  logdump:
