@@ -137,4 +137,5 @@ Logster uses Sequelize to handle its database "state". So tables, configs, datab
 
 - `https://ecotrust-canada.github.io/markdown-toc/`
 - [Sequelize](https://sequelize.org/master/manual/migrations.html#installing-the-cli)
-- [Bezkoder.com: node-js-express-sequelize-mysql](https://www.bezkoder.com/node-js-express-sequelize-mysql/)
+- [Bezkoder.com Blog on: node-js-express-sequelize-mysql](https://www.bezkoder.com/node-js-express-sequelize-mysql/)
+- [Bezkoder.com Github on: node-js-express-sequelize-mysql](https://github.com/bezkoder/nodejs-express-sequelize-mysql)
