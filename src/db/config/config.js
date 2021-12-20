@@ -29,7 +29,13 @@ module.exports = {
     dialectOptions: {
       bigNumberStrings: true
     },
-    logging: console.log
+    logging: console.log,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
   },
   production: {
     username: process.env.PROD_DB_USERNAME,
@@ -43,6 +49,13 @@ module.exports = {
       // ssl: {
       //   ca: fs.readFileSync(__dirname + '/mysql-ca-main.crt')
       // }
+    },
+    logging: console.log,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
     }
   }
 };

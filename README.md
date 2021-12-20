@@ -133,6 +133,16 @@ Logster uses Sequelize to handle its database "state". So tables, configs, datab
   - `npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string`
     - [Sequelize docs](https://sequelize.org/v5/manual/migrations.html#creating-first-model--and-migration-)
 
+### Models structure
+
+There are three tables for each microservice. Lets say one microservice is called "mia".
+
+- `logster_mia`, internal logging for logster regarding processing of mia
+- `mia_logs`, where the logs for the mia service is stored
+- `mia_logs_changelog`, a changelog on time, operation and identity of the operation
+
+So to keep track of the microservices, there is a table called `producers`. Which stores names and tokens for each microservice.
+
 ## Other Tools / Misc / Sources
 
 - `https://ecotrust-canada.github.io/markdown-toc/`

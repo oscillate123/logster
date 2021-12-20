@@ -1,10 +1,8 @@
-const express = require('express');
-const db = require("./db/models");
+const { sequelize } = require('./db/models')
 
+const express = require('express');
 const app = express()
 const port = 3000
-
-db.sequelize.sync();
 
 app.get('/', function (req, res) {
 
@@ -16,6 +14,8 @@ app.get('/', function (req, res) {
     res.send(request_information)
 })
 
-app.listen(port, () => {
-    console.log(`Running app on ${port}`)
+app.listen({ port: port}, async () => {
+    console.log(`Server running on http://localhost:${port}`)
+    await sequelize.sync({ force: true })
+    console.log('Database forced!')
 })
